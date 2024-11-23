@@ -90,14 +90,17 @@ export default function Navbar() {
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center h-screen bg-black text-white px-4 md:px-0 pt-20">
         {/* Profile Image */}
-        <img
-          src="/Foto.jpg" // Replace with your image path
+        <Image 
+          src="/Foto.jpg" 
           alt="Foto Profil"
-          className="w-72 h-72 rounded-full shadow-2xl border-4 border-gray-500 object-cover mb-6"
-        />
+          className="w-72 h-72 rounded-full shadow-2xl border-4 border-gray-500 object-cover mb-6 "
+          width={100}
+          height={100}> 
+          </Image>
+
         {/* Text */}
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white">Hello, I'm Made Adi</h2>
+          <h2 className="text-4xl font-bold text-white">Hello, I&#39;m Made Adi</h2>
           <p className="mt-4 text-lg text-gray-300">
             Welcome to my personal website. Explore and enjoy the content!
           </p>
