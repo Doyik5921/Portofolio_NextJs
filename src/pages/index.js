@@ -95,8 +95,8 @@ export default function Navbar() {
           src="/Foto.jpg" 
           alt="Foto Profil"
           className="w-72 h-72 rounded-full shadow-2xl border-4 border-gray-500 object-cover mb-6 "
-          width={100}
-          height={100}> 
+          width={1000}
+          height={1000}> 
           </Image>
 
         {/* Text */}
