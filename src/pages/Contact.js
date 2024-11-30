@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,19 +33,19 @@ export default function Navbar() {
                     <div className="ml-auto hidden md:flex justify-center">
                         <ul className="flex space-x-6">
                             <li>
-                                <a href="/index" className="underline1">
+                                <link href="/index" className="underline1">
                                     Home
-                                </a>
+                                </link>
                             </li>
                             <li>
-                                <a href="#about-us" className="underline1">
+                                <link href="#about-us" className="underline1">
                                     About
-                                </a>
+                                </link>
                             </li>
                             <li>
-                                <a href="#contact" className="underline1">
+                                <link href="#contact" className="underline1">
                                     Contact
-                                </a>
+                                </link>
                             </li>
                         </ul>
                     </div>
@@ -79,19 +80,19 @@ export default function Navbar() {
                     <div className="md:hidden bg-gray-800 text-white">
                         <ul className="flex flex-col space-y-4 px-6 py-4">
                             <li>
-                                <a href="/index" className="hover:underline transition">
+                                <link href="/index" className="hover:underline transition">
                                     Home
-                                </a>
+                                </link>
                             </li>
                             <li>
-                                <a href="#about-us" className="hover:underline transition">
+                                <link href="#about-us" className="hover:underline transition">
                                     About
-                                </a>
+                                </link>
                             </li>
                             <li>
-                                <a href="#contact" className="hover:underline transition">
+                                <link href="#contact" className="hover:underline transition">
                                     Contact
-                                </a>
+                                </link>
                             </li>
                         </ul>
                     </div>
@@ -130,16 +131,16 @@ export default function Navbar() {
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-4">
-            <a
+            <link
               href="#"
               className="text-xl font-bold tracking-wide hover:text-gray-400 transition"
             >
               DeAdi
-            </a>
+            </link>
           </div>
           <div className="flex justify-center space-x-6 mb-4">
             {/* GitHub Icon */}
-            <a
+            <link
               href="https://github.com/Doyik5921"
               target="_blank"
               rel="noopener noreferrer"
@@ -164,7 +165,7 @@ export default function Navbar() {
                   ></path>
                 </g>
               </svg>
-            </a>
+            </link>
           </div>
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Made Adi. All rights reserved.

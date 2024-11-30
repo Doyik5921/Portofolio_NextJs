@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,26 +26,26 @@ export default function Navbar() {
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           {/* Logo - Tetap di Kiri */}
           <div className="text-2xl font-bold">
-            <a href="#">DeAdi</a>
+            <link href="#">DeAdi</link>
           </div>
 
           {/* Menu - Geserkan ke Kanan */}
           <div className="ml-auto hidden md:flex justify-center">
             <ul className="flex space-x-6">
               <li>
-                <a href="#" className="underline1">
+                <link href="#" className="underline1">
                   Home
-                </a>
+                </link>
               </li>
               <li>
-                <a href="#about-us" className="underline1">
+                <link href="#about-us" className="underline1">
                   About
-                </a>
+                </link>
               </li>
               <li>
-                <a href="/Contact" className="underline1">
+                <link href="/Contact" className="underline1">
                   Contact
-                </a>
+                </link>
               </li>
             </ul>
           </div>
@@ -79,19 +80,19 @@ export default function Navbar() {
           <div className="md:hidden bg-gray-800 text-white">
             <ul className="flex flex-col space-y-4 px-6 py-4">
               <li>
-                <a href="#" className="hover:underline transition">
+                <link href="#" className="hover:underline transition">
                   Home
-                </a>
+                </link>
               </li>
               <li>
-                <a href="#about-us" className="hover:underline transition">
+                <link href="#about-us" className="hover:underline transition">
                   About
-                </a>
+                </link>
               </li>
               <li>
-                <a href="/Contact" className="hover:underline transition">
+                <link href="/Contact" className="hover:underline transition">
                   Contact
-                </a>
+                </link>
               </li>
             </ul>
           </div>
@@ -182,7 +183,7 @@ export default function Navbar() {
           </div>
           <div className="flex justify-center space-x-6 mb-4">
             {/* GitHub Icon */}
-            <a
+            <link
               href="https://github.com/Doyik5921"
               target="_blank"
               rel="noopener noreferrer"
@@ -207,7 +208,7 @@ export default function Navbar() {
                   ></path>
                 </g>
               </svg>
-            </a>
+            </link>
           </div>
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Made Adi. All rights reserved.
