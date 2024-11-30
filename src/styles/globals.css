@@ -2,20 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #000000;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #000000;
-  }
-}
 
-/* body {
-  color: var(--foreground);
-  background: var(--background);
+body {
   font-family: Arial, Helvetica, sans-serif;
-} */
+}
+.underline1 {
+  position: relative;
+  text-decoration: none;
+  color: rgb(255, 255, 255); /* Sesuaikan warna teks */
+}
+
+.underline1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255); /* Warna underline */
+  transition: width 0.3s ease-in-out;
+}
+
+.underline1:hover::after,
+.underline1.active::after { /* Aktifkan pada hover dan tab aktif */
+  width: 100%;
+}

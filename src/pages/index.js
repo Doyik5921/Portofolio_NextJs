@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,17 +11,48 @@ export default function Navbar() {
 
   return (
     <>
+      <Head>
+        <title>Portfolio Made Adi</title>
+        <meta
+          name="description"
+          content="Personal portfolio of Made Adi showcasing skills and projects."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       {/* Navbar */}
-      <nav className="bg-black text-white fixed top-0 w-full z-50">
-        <div className="container mx-auto flex justify-between items-center pt-4 px-3">
-          {/* Logo */}
+      <header className="bg-gray-800 text-white fixed top-0 w-full z-50 shadow-lg">
+        <div className="container mx-auto flex items-center justify-between px-4 py-3">
+          {/* Logo - Tetap di Kiri */}
           <div className="text-2xl font-bold">
             <a href="#">DeAdi</a>
           </div>
 
-          {/* Hamburger button for mobile */}
-          <div className="md:hidden">
+          {/* Menu - Geserkan ke Kanan */}
+          <div className="ml-auto hidden md:flex justify-center">
+            <ul className="flex space-x-6">
+              <li>
+                <a href="#" className="underline1">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about-us" className="underline1">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/Contact" className="underline1">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Button Menu Mobile - Tetap di Kanan */}
+          <div className="flex md:hidden">
             <button
+              aria-label="Toggle Mobile Menu"
               className="focus:outline-none"
               onClick={toggleMobileMenu}
             >
@@ -40,199 +72,148 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-
-          {/* Desktop menu */}
-          <ul className="hidden md:flex space-x-6">
-            <li>
-              <a
-                href="#"
-                className="hover:text-gray-300 border-b-2 border-transparent hover:border-gray-300 transition duration-300"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="hover:text-gray-300 border-b-2 border-transparent hover:border-gray-300 transition duration-300"
-              >
-                About
-              </a>
-            </li>
-            
-          </ul>
         </div>
 
-        {/* Mobile menu */}
+        {/* Menu Mobile */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black text-white">
-            <ul className="flex flex-col space-y-2 px-4 py-2">
+          <div className="md:hidden bg-gray-800 text-white">
+            <ul className="flex flex-col space-y-4 px-6 py-4">
               <li>
-                <a
-                  href="#"
-                  className="hover:text-gray-300 border-b-2 border-transparent hover:border-gray-300 transition duration-300"
-                >
+                <a href="#" className="hover:underline transition">
                   Home
                 </a>
               </li>
               <li>
-                <a
-                  href="#about"
-                  className="hover:text-gray-300 border-b-2 border-transparent hover:border-gray-300 transition duration-300"
-                >
+                <a href="#about-us" className="hover:underline transition">
                   About
+                </a>
+              </li>
+              <li>
+                <a href="/Contact" className="hover:underline transition">
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
         )}
-      </nav>
+      </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen bg-black text-white px-4 md:px-0 pt-20">
-        {/* Profile Image */}
-        <Image 
-          src="/Foto.jpg" 
+      <section className="flex flex-col items-center justify-center h-screen text-black px-4  md:px-0">
+        <Image
+          src="/Foto.jpg"
           alt="Foto Profil"
-          className="w-72 h-72 rounded-full shadow-2xl border-4 border-gray-500 object-cover mb-6 "
+          className="w-48 h-48 sm:w-72 sm:h-72 rounded-full shadow-2xl border-4 border-gray-500 object-cover mb-14 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] ring-4 ring-gray-400 transition-transform duration-500 transform hover:scale-110 hover:ring-gray-600 hover:grayscale-0 grayscale"
           width={1000}
-          height={1000}> 
-          </Image>
-
-        {/* Text */}
+          height={1000}
+          priority
+        />
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white">Hello, I&#39;m Made Adi</h2>
-          <p className="mt-4 text-lg text-gray-300">
+          <h2 className="text-4xl font-bold">Hello, I&#39;m Made Adi</h2>
+          <p className="mt-4 text-lg text-gray-500">
             Welcome to my personal website. Explore and enjoy the content!
           </p>
-          {/* Skills Section */}
-      <section id="skills" className="bg-black text-white py-16">
-        <div className="container mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-6">Skills</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              HTML
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              CSS
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              JavaScript
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              PHP
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              Bootstrap
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              Tailwind
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              Next.js
-            </div>
-            <div className="p-4 border rounded bg-gray-800 hover:scale-[1.08] transition duration-300">
-              Java
-            </div>
+        </div>
+      </section>
+      {/* Skills Section */}
+      <section id="skills" className="py-16 px-6 text-center bg-gray-100">
+        <h2 className=" text-gray-800 text-3xl font-bold mb-6">Skills</h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            HTML
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            CSS
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            Tailwind
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            JavaScript
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            Java
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            PHP
+          </span>
+          <span className="bg-slate-800 text-white py-2 px-4 rounded-full shadow-lg hover:scale-[1.05] transition duration-300">
+            NextJS
+          </span>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about-us" className="text-gray-800 py-16 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-6">About Us</h2>
+        <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
+          Welcome to my personal portfolio! My name is Made Adi, and I am a
+          passionate developer with expertise in web development and design.
+          This website showcases my projects, skills, and journey as a developer.
+          I strive to create innovative and user-friendly solutions for my clients
+          and collaborators. Explore this site to learn more about my work, and
+          feel free to reach out for collaborations or inquiries!
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-12 mt-7">
+          <div>
+            <p className="text-gray-800">Negara</p>
+            <p className="text-xl font-bold text-gray-500">Indonesia</p>
+          </div>
+          <div>
+            <p className="text-gray-800">Provinsi</p>
+            <p className="text-xl font-bold text-gray-500">Bali</p>
+          </div>
+          <div>
+            <p className="text-gray-800">Kabupaten</p>
+            <p className="text-xl font-bold text-gray-500">Badung</p>
           </div>
         </div>
       </section>
-        </div>
-      </section>
-
-      
-      {/* About Section */}
-      <section id="about" className="bg-black text-white py-16">
-        <div className="container mx-auto text-center px-6">
-          <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <p className="text-lg text-gray-300 mb-6">
-            Hai semuanya! Nama Saya Made Adi Dharma Putra. Saya Lahir di Badung,
-            Bali pada tanggal 21 Desember 2007. Hobby saya adalah kesenian dan
-            motoran. Saya hanyalah pelajar biasa, kadang pintar, kadang bodoh,
-            tapi tetap semangat untuk sukses!
+      {/* Footer Section */}
+      <footer className="bg-gray-800 text-white py-6">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-4">
+            <a
+              href="#"
+              className="text-xl font-bold tracking-wide hover:text-gray-400 transition"
+            >
+              DeAdi
+            </a>
+          </div>
+          <div className="flex justify-center space-x-6 mb-4">
+            {/* GitHub Icon */}
+            <a
+              href="https://github.com/Doyik5921"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group hover:scale-110 transition-transform duration-300"
+            >
+              <svg
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="w-8 h-8 text-gray-400 group-hover:text-white"
+                aria-label="GitHub Icon"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M24,2.5a21.5,21.5,0,0,0-6.8,41.9c1.08.2,1.47-.46,1.47-1s0-1.86,0-3.65c-6,1.3-7.24-2.88-7.24-2.88A5.7,5.7,0,0,0,9,33.68c-1.95-1.33.15-1.31.15-1.31a4.52,4.52,0,0,1,3.29,2.22c1.92,3.29,5,2.34,6.26,1.79a4.61,4.61,0,0,1,1.37-2.88c-4.78-.54-9.8-2.38-9.8-10.62a8.29,8.29,0,0,1,2.22-5.77,7.68,7.68,0,0,1,.21-5.69s1.8-.58,5.91,2.2a20.46,20.46,0,0,1,10.76,0c4.11-2.78,5.91-2.2,5.91-2.2a7.74,7.74,0,0,1,.21,5.69,8.28,8.28,0,0,1,2.21,5.77c0,8.26-5,10.07-9.81,10.61a5.12,5.12,0,0,1,1.46,4c0,2.87,0,5.19,0,5.9s.39,1.24,1.48,1A21.5,21.5,0,0,0,24,2.5"
+                  ></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} Made Adi. All rights reserved.
           </p>
         </div>
-      </section>
-
-     {/* Contact Section */}
-<section id="contact" className="bg-black text-white py-8">
-  <div className="container mx-auto px-4">
-    <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 p-6">
-      {/* Email */}
-      <div className="flex items-center space-x-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0a2.25 2.25 0 00-2.25-2.25H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v-.068l-8.749 6.549c-.803.601-1.949.601-2.752 0L2.25 6.682"
-          />
-        </svg>
-        <span>AdiiDharmaa@gmail.com</span>
-      </div>
-      {/* LinkedIn */}
-      <div className="flex items-center space-x-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 8a6 6 0 10-12 0v8a6 6 0 0012 0V8zm-7.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 11.25h-3.375v5.625H15V11.25z"
-          />
-        </svg>
-        <span>AdiDharma</span>
-      </div>
-      {/* Location */}
-      <div className="flex items-center space-x-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 2.25c-3.352 0-6.06 2.708-6.06 6.06 0 5.403 6.06 12.69 6.06 12.69s6.06-7.287 6.06-12.69c0-3.352-2.708-6.06-6.06-6.06zm0 9a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-          />
-        </svg>
-        <span>Canggu, Bali, Indonesia</span>
-      </div>
-      {/* Instagram */}
-      <div className="flex items-center space-x-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 11.25v-5a3.75 3.75 0 00-3.75-3.75h-10.5A3.75 3.75 0 003 6.25v10.5A3.75 3.75 0 006.75 20.5h10.5A3.75 3.75 0 0021 16.75v-5z"
-          />
-        </svg>
-        <span>Addidharma_</span>
-      </div>
-    </div>
-  </div>
-</section>
+      </footer>
 
 
     </>
