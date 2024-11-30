@@ -18,7 +18,7 @@ export default function Navbar() {
                     name="description"
                     content="Personal portfolio of Made Adi showcasing skills and projects."
                 />
-                <link rel="icon" href="/favicon.ico" />
+                <Link rel="icon" href="/favicon.ico" />
             </Head>
 
             {/* Navbar */}
@@ -33,19 +33,19 @@ export default function Navbar() {
                     <div className="ml-auto hidden md:flex justify-center">
                         <ul className="flex space-x-6">
                             <li>
-                                <link href="/index" className="underline1">
+                                <Link href="/index" className="underline1">
                                     Home
-                                </link>
+                                </Link>
                             </li>
                             <li>
-                                <link href="#about-us" className="underline1">
+                                <Link href="#about-us" className="underline1">
                                     About
-                                </link>
+                                </Link>
                             </li>
                             <li>
-                                <link href="#contact" className="underline1">
+                                <Link href="#contact" className="underline1">
                                     Contact
-                                </link>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -80,19 +80,19 @@ export default function Navbar() {
                     <div className="md:hidden bg-gray-800 text-white">
                         <ul className="flex flex-col space-y-4 px-6 py-4">
                             <li>
-                                <link href="/index" className="hover:underline transition">
+                                <Link href="/index" className="hover:underline transition">
                                     Home
-                                </link>
+                                </Link>
                             </li>
                             <li>
-                                <link href="#about-us" className="hover:underline transition">
+                                <Link href="#about-us" className="hover:underline transition">
                                     About
-                                </link>
+                                </Link>
                             </li>
                             <li>
-                                <link href="#contact" className="hover:underline transition">
+                                <Link href="#contact" className="hover:underline transition">
                                     Contact
-                                </link>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -131,16 +131,16 @@ export default function Navbar() {
       <footer className="bg-gray-800 text-white py-6">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-4">
-            <link
+            <Link
               href="#"
               className="text-xl font-bold tracking-wide hover:text-gray-400 transition"
             >
               DeAdi
-            </link>
+            </Link>
           </div>
           <div className="flex justify-center space-x-6 mb-4">
             {/* GitHub Icon */}
-            <link
+            <Link
               href="https://github.com/Doyik5921"
               target="_blank"
               rel="noopener noreferrer"
@@ -165,7 +165,7 @@ export default function Navbar() {
                   ></path>
                 </g>
               </svg>
-            </link>
+            </Link>
           </div>
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Made Adi. All rights reserved.
